@@ -695,7 +695,7 @@
             <div class="banner-content">
                 <h1>北京大学护理学院2023级1班</h1>
                 <p>团结奋进 追求卓越 服务健康 奉献爱心</p>
-                <!-- <a href="#about" class="btn">了解更多</a> -->
+                <a href="#" class="btn" id="followBtn2">了解更多</a>
             </div>
         </div>
 
@@ -1303,6 +1303,7 @@
         const modal = document.getElementById("qrModal");
         const btn = document.getElementById("followBtn");
         const btn1 = document.getElementById("followBtn1");
+        const btn2 = document.getElementById("followBtn2");
         const span = document.getElementsByClassName("close")[0];
 
         // 点击按钮打开模态框
@@ -1312,6 +1313,11 @@
 
         // 点击按钮打开模态框
         btn1.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // 点击按钮打开模态框
+        btn2.onclick = function() {
             modal.style.display = "block";
         }
 
