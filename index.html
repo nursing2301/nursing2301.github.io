@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京大学护理学院23级1班</title>
+    <style>
+        /* 全局样式 */
+        :root {
+            --primary-color: #94070A; /* 北大红 */
+            --secondary-color: #f8f1e9;
+            --text-color: #333;
+            --light-text: #777;
+            --white: #fff;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'SimHei', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            color: var(--primary-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 4px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: #7a0608;
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* 导航栏 */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-scrolled {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            font-weight: 500;
+            padding: 5px 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 5px;
+            transition: var(--transition);
+        }
+        
+        /* Banner */
+        .banner {
+            height: 500px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+        }
+        
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .banner h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .banner p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* 首页内容 */
+        .home-content {
+            background-color: var(--white);
+            padding: 60px 0;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .feature-card p {
+            color: var(--light-text);
+        }
+        
+        /* 班级简介 */
+        .about {
+            background-color: var(--secondary-color);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .students {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .student-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .student-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .student-image {
+            height: 250px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .student-info {
+            padding: 20px;
+        }
+        
+        .student-info h3 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .student-info p {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+        
+        /* 团建活动 */
+        .activities {
+            background-color: var(--white);
+        }
+        
+        .activity-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .activity-card {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .activity-image {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .activity-info {
+            padding: 20px;
+        }
+        
+        .activity-info .date {
+            color: var(--primary-color);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .activity-info h3 {
+            margin-bottom: 10px;
+        }
+        
+        .activity-info p {
+            color: var(--light-text);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        /* 成果展示 */
+        .achievements {
+            background-color: var(--secondary-color);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .stat-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-card .number {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card .label {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+        
+        .charts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+        
+        .chart-container {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .chart-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .chart {
+            height: 300px;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+        }
+        
+        /* 班级文化 */
+        .culture {
+            background-color: var(--white);
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .culture-item {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .culture-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .culture-image {
+            height: 250px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .culture-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .culture-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .culture-info p {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: #222;
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            color: #aaa;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 70px;
+                background-color: var(--white);
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: var(--shadow);
+                transform: translateY(-150%);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .banner h1 {
+                font-size: 36px;
+            }
+            
+            .banner p {
+                font-size: 18px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .charts {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        /* 页面切换效果 */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="image/班徽.png" alt="北京大学logo">
+                    <span class="logo-text">护理学院23级1班</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link active" data-page="home">首页</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">班级简介</a></li>
+                    <li><a href="#" class="nav-link" data-page="activities">团建活动</a></li>
+                    <li><a href="#" class="nav-link" data-page="achievements">成果展示</a></li>
+                    <li><a href="#" class="nav-link" data-page="culture">班级文化</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首页 -->
+    <section id="home" class="page active">
+        <!-- Banner -->
+        <div class="banner" style="background-image: url('image/banner.jpg');">
+            <div class="banner-content">
+                <h1>北京大学护理学院23级1班</h1>
+                <p>团结奋进 追求卓越 服务健康 奉献爱心</p>
+                <a href="#about" class="btn">了解更多</a>
+            </div>
+        </div>
+
+        <!-- 首页内容 -->
+        <div class="home-content">
+            <div class="container">
+                <h2 class="section-title">班级风采</h2>
+                <div class="features">
+                    <div class="feature-card fade-in">
+                        <h3>最新动态</h3>
+                        <p>班级近期举办了"护理技能大赛"，同学们积极参与，展现了扎实的专业基础和团队协作精神。比赛中涌现出多位表现优异的同学，为班级争得了荣誉。</p>
+                    </div>
+                    <div class="feature-card fade-in" style="animation-delay: 0.2s;">
+                        <h3>特色活动</h3>
+                        <p>"白衣天使进社区"志愿服务活动定期开展，同学们利用专业知识为社区居民提供健康咨询和基础护理服务，受到社区居民的一致好评。</p>
+                    </div>
+                    <div class="feature-card fade-in" style="animation-delay: 0.4s;">
+                        <h3>班级风采</h3>
+                        <p>在刚刚结束的学院运动会上，我班团结一心，奋勇拼搏，获得了团体总分第一名的好成绩，展现了23级1班积极向上的精神风貌。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 班级简介 -->
+    <section id="about" class="page">
+        <div class="about section">
+            <div class="container">
+                <h2 class="section-title">班级简介</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>关于我们</h3>
+                        <p>北京大学护理学院23级1班是一个充满活力与凝聚力的集体，由30名怀揣护理梦想的优秀学子组成。我们秉持"团结、奋进、专业、奉献"的班训，在学术研究、社会实践、志愿服务等方面都取得了优异成绩。</p>
+                        <p>班级学风严谨，同学们互帮互助，形成了浓厚的学习氛围。在专业课程学习之余，我们还积极开展各类学术研讨和技能训练活动，不断提升专业素养。</p>
+                        <p>班级注重全面发展，同学们积极参与学校各项活动，在文体比赛、志愿服务、社会实践等方面都表现突出，展现了北大护理人的风采。</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="image/about.png" alt="班级合影">
+                    </div>
+                </div>
+                
+                <h3 class="section-title" style="margin-top: 60px;">班级成员</h3>
+                <div class="students">
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/祝迎莹.png');"></div>
+                        <div class="student-info">
+                            <h3>祝迎莹</h3>
+                            <p>前任班长</p>
+                            <p>专业成绩优异，组织能力强，带领班级获得多项荣誉。</p>
+                        </div>
+                    </div>
+                    <div class="student-card fade-in" style="animation-delay: 0.2s;">
+                        <div class="student-image" style="background-image: url('image/张雪娇.jpg');"></div>
+                        <div class="student-info">
+                            <h3>张雪娇</h3>
+                            <p>学习委员</p>
+                            <p>学术研究突出，多次获得奖学金，热心帮助同学解决学习问题。</p>
+                        </div>
+                    </div>
+                    <!-- 更多同学卡片可以在这里添加 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团建活动 -->
+    <section id="activities" class="page">
+        <div class="activities section">
+            <div class="container">
+                <h2 class="section-title">团建活动</h2>
+                <div class="activity-list">
+                    <div class="activity-card fade-in">
+                        <div class="activity-image" style="background-image: url('image/活动-参军欢送会.png');"></div>
+                        <div class="activity-info">
+                            <div class="date">2023年10月15日</div>
+                            <h3>扬帆起航，军旅新篇——祝迎莹光荣参军欢送会</h3>
+                            <p>班级为即将参军的祝迎莹同学举行了温馨感人的欢送会，同学们纷纷送上祝福，表达了对她军旅生涯的美好祝愿。</p>
+                            <a href="https://mp.weixin.qq.com/s/GoBPxfkEFQo308-T7f0QWA" class="btn" target="_blank">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="activity-card fade-in" style="animation-delay: 0.2s;">
+                        <div class="activity-image" style="background-image: url('image/活动-香山.jpg');"></div>
+                        <div class="activity-info">
+                            <div class="date">2023年9月20日</div>
+                            <h3>班级秋游活动——香山赏红叶</h3>
+                            <p>全班同学前往香山公园开展秋游活动，欣赏红叶美景，增进同学情谊，放松身心，为接下来的学习生活充电。</p>
+                            <a href="#" class="btn">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="activity-card fade-in" style="animation-delay: 0.4s;">
+                        <div class="activity-image" style="background-image: url('image/活动-新生见面.png');"></div>
+                        <div class="activity-info">
+                            <div class="date">2023年8月30日</div>
+                            <h3>新生见面会暨班级破冰活动</h3>
+                            <p>新学期伊始，班级组织了新生见面会和破冰活动，通过各种有趣的游戏和互动环节，帮助新同学快速融入集体。</p>
+                            <a href="#" class="btn">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成果展示 -->
+    <section id="achievements" class="page">
+        <div class="achievements section">
+            <div class="container">
+                <h2 class="section-title">成果展示</h2>
+                <div class="stats">
+                    <div class="stat-card fade-in">
+                        <h3>入党情况</h3>
+                        <div class="number">12</div>
+                        <div class="label">名入党积极分子</div>
+                    </div>
+                    <div class="stat-card fade-in" style="animation-delay: 0.2s;">
+                        <h3>活动参与率</h3>
+                        <div class="number">80%</div>
+                        <div class="label">平均参与率</div>
+                    </div>
+                    <div class="stat-card fade-in" style="animation-delay: 0.4s;">
+                        <h3>获奖情况</h3>
+                        <div class="number">12</div>
+                        <div class="label">项校级以上奖项</div>
+                    </div>
+                    <div class="stat-card fade-in" style="animation-delay: 0.6s;">
+                        <h3>志愿服务</h3>
+                        <div class="number">300+</div>
+                        <div class="label">小时总时长</div>
+                    </div>
+                </div>
+                
+                <div class="charts">
+                    <div class="chart-container fade-in">
+                        <h3>学习成绩分布</h3>
+                        <div class="chart">
+                            <p>此处将显示学习成绩分布图表</p>
+                        </div>
+                    </div>
+                    <div class="chart-container fade-in" style="animation-delay: 0.2s;">
+                        <h3>活动参与情况</h3>
+                        <div class="chart">
+                            <p>此处将显示活动参与情况图表</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 班级文化 -->
+    <section id="culture" class="page">
+        <div class="culture section">
+            <div class="container">
+                <h2 class="section-title">班级文化</h2>
+                <div class="culture-grid">
+                    <div class="culture-item fade-in">
+                        <div class="culture-image" style="background-image: url('image/合照.png');"></div>
+                        <div class="culture-info">
+                            <h3>班级合照</h3>
+                            <p>记录班级成长的美好瞬间，展现团结友爱的集体风貌。</p>
+                        </div>
+                    </div>
+                    <div class="culture-item fade-in" style="animation-delay: 0.2s;">
+                        <div class="culture-image" style="background-image: url('image/班歌.jpg');"></div>
+                        <div class="culture-info">
+                            <h3>班歌</h3>
+                            <p>《夜空中最亮的星》 - 象征着我们追逐梦想、永不放弃的精神。</p>
+                            <audio controls style="width: 100%; margin-top: 10px;">
+                                <source src="#" type="audio/mpeg">
+                                您的浏览器不支持音频元素。
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="culture-item fade-in" style="animation-delay: 0.4s;">
+                        <div class="culture-image" style="background-image: url('image/班徽.png');"></div>
+                        <div class="culture-info">
+                            <h3>班徽</h3>
+                            <p>融合了北大元素和护理专业特色，象征着我们传承北大精神，践行护理使命。</p>
+                        </div>
+                    </div>
+                    <div class="culture-item fade-in" style="animation-delay: 0.6s;">
+                        <div class="culture-image" style="background-image: url('image/班服.png');"></div>
+                        <div class="culture-info">
+                            <h3>班服</h3>
+                            <p>以北大红为主色调，设计简洁大方，展现了班级的凝聚力和专业特色。</p>
+                        </div>
+                    </div>
+                    <div class="culture-item fade-in" style="animation-delay: 0.8s;">
+                        <div class="culture-image" style="background-image: url('image/班旗.jpg');"></div>
+                        <div class="culture-info">
+                            <h3>班旗</h3>
+                            <p>班旗设计融合了北大校徽和护理元素，象征着我们在北大精神的指引下，践行护理使命。</p>
+                        </div>
+                    </div>
+                    <div class="culture-item fade-in" style="animation-delay: 1s;">
+                        <div class="culture-image" style="background-image: url('image/公众号.png');"></div>
+                        <div class="culture-info">
+                            <h3>班级公众号</h3>
+                            <p>定期发布班级动态、学术资讯和护理知识，是展示班级风采的重要窗口。</p>
+                            <a href="#" class="btn" style="margin-top: 10px;">关注我们</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p>北京大学护理学院23级1班是一个团结奋进、追求卓越的集体，我们秉持"团结、奋进、专业、奉献"的班训，在学术研究、社会实践、志愿服务等方面都取得了优异成绩。</p>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="nav-link" data-page="home">首页</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">班级简介</a></li>
+                        <li><a href="#" class="nav-link" data-page="activities">团建活动</a></li>
+                        <li><a href="#" class="nav-link" data-page="achievements">成果展示</a></li>
+                        <li><a href="#" class="nav-link" data-page="culture">班级文化</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>常用链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.pku.edu.cn/" target="_blank">北京大学</a></li>
+                        <li><a href="https://www.bjmu.edu.cn/" target="_blank">北京大学医学部</a></li>
+                        <li><a href="https://course.pku.edu.cn/" target="_blank">北大教学网</a></li>
+                        <li><a href="https://nursing.bjmu.edu.cn/" target="_blank">护理学院</a></li>
+                        <li><a href="#" target="_blank">班级公众号</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <p>地址：北京市海淀区学院路38号北京大学护理学院</p>
+                    <p>邮箱：nursing23_1@pku.edu.cn</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 北京大学护理学院23级1班 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // 移动端菜单切换
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // 页面切换
+        const navLinksAll = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page');
+        
+        navLinksAll.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 移除所有active类
+                navLinksAll.forEach(l => l.classList.remove('active'));
+                pages.forEach(page => page.classList.remove('active'));
+                
+                // 添加active类到当前点击的链接和对应的页面
+                this.classList.add('active');
+                const pageId = this.getAttribute('data-page');
+                document.getElementById(pageId).classList.add('active');
+                
+                // 如果是移动端，关闭菜单
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+                
+                // 滚动到顶部
+                window.scrollTo(0, 0);
+            });
+        });
+
+        // 动画效果 - 当元素进入视口时触发
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        fadeElements.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // 简单的图表模拟
+        document.addEventListener('DOMContentLoaded', function() {
+            const charts = document.querySelectorAll('.chart');
+            
+            charts.forEach((chart, index) => {
+                if (index === 0) {
+                    // 学习成绩分布图表
+                    chart.innerHTML = `
+                        <svg width="100%" height="100%" viewBox="0 0 400 300">
+                            <rect x="50" y="50" width="300" height="200" fill="#f9f9f9" stroke="#ddd" stroke-width="1"/>
+                            <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#666">学习成绩分布</text>
+                            <line x1="50" y1="250" x2="350" y2="250" stroke="#999" stroke-width="1"/>
+                            <line x1="50" y1="250" x2="50" y2="50" stroke="#999" stroke-width="1"/>
+                            <text x="30" y="240" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">0</text>
+                            <text x="30" y="190" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">20</text>
+                            <text x="30" y="140" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">40</text>
+                            <text x="30" y="90" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">60</text>
+                            <text x="30" y="40" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">80</text>
+                            <rect x="80" y="150" width="40" height="100" fill="#94070A"/>
+                            <rect x="140" y="100" width="40" height="150" fill="#94070A"/>
+                            <rect x="200" y="70" width="40" height="180" fill="#94070A"/>
+                            <rect x="260" y="120" width="40" height="130" fill="#94070A"/>
+                            <text x="100" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">80-89</text>
+                            <text x="160" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">90-94</text>
+                            <text x="220" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">95-99</text>
+                            <text x="280" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">100</text>
+                        </svg>
+                    `;
+                } else if (index === 1) {
+                    // 活动参与情况图表
+                    chart.innerHTML = `
+                        <svg width="100%" height="100%" viewBox="0 0 400 300">
+                            <rect x="50" y="50" width="300" height="200" fill="#f9f9f9" stroke="#ddd" stroke-width="1"/>
+                            <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#666">活动参与情况</text>
+                            <line x1="50" y1="250" x2="350" y2="250" stroke="#999" stroke-width="1"/>
+                            <line x1="50" y1="250" x2="50" y2="50" stroke="#999" stroke-width="1"/>
+                            <text x="30" y="240" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">0%</text>
+                            <text x="30" y="190" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">25%</text>
+                            <text x="30" y="140" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">50%</text>
+                            <text x="30" y="90" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">75%</text>
+                            <text x="30" y="40" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">100%</text>
+                            <circle cx="100" cy="180" r="30" fill="none" stroke="#94070A" stroke-width="10" stroke-dasharray="78.5, 235.5" transform="rotate(-90 100 180)"/>
+                            <text x="100" y="180" text-anchor="middle" font-family="Arial" font-size="14" fill="#94070A">75%</text>
+                            <text x="100" y="210" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">学术活动</text>
+                            
+                            <circle cx="200" cy="180" r="30" fill="none" stroke="#94070A" stroke-width="10" stroke-dasharray="94.2, 219.8" transform="rotate(-90 200 180)"/>
+                            <text x="200" y="180" text-anchor="middle" font-family="Arial" font-size="14" fill="#94070A">90%</text>
+                            <text x="200" y="210" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">文体活动</text>
+                            
+                            <circle cx="300" cy="180" r="30" fill="none" stroke="#94070A" stroke-width="10" stroke-dasharray="62.8, 251.2" transform="rotate(-90 300 180)"/>
+                            <text x="300" y="180" text-anchor="middle" font-family="Arial" font-size="14" fill="#94070A">50%</text>
+                            <text x="300" y="210" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">志愿服务</text>
+                        </svg>
+                    `;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
