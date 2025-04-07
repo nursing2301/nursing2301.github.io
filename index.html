@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北京大学护理学院23级1班</title>
+    <title>北京大学护理学院2023级1班</title>
     <style>
         /* 全局样式 */
         :root {
@@ -615,6 +615,48 @@
         .page.active {
             display: block;
         }
+
+        /* 模态框样式 */
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7); /* 半透明黑色背景 */
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #94070A; /* 使用北大红 */
+        }
+
+        .qr-image {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin: 15px 0;
+        }
     </style>
 </head>
 <body>
@@ -647,7 +689,7 @@
         <!-- Banner -->
         <div class="banner" style="background-image: url('image/banner.jpg');">
             <div class="banner-content">
-                <h1>北京大学护理学院23级1班</h1>
+                <h1>北京大学护理学院2023级1班</h1>
                 <p>团结奋进 追求卓越 服务健康 奉献爱心</p>
                 <a href="#about" class="btn">了解更多</a>
             </div>
@@ -660,15 +702,17 @@
                 <div class="features">
                     <div class="feature-card fade-in">
                         <h3>最新动态</h3>
-                        <p>班级近期举办了"护理技能大赛"，同学们积极参与，展现了扎实的专业基础和团队协作精神。比赛中涌现出多位表现优异的同学，为班级争得了荣誉。</p>
+                        <p>期中考试季将近，请各位同学注意积极复习备考，合理平衡学习和生活。</p>
                     </div>
                     <div class="feature-card fade-in" style="animation-delay: 0.2s;">
                         <h3>特色活动</h3>
-                        <p>"白衣天使进社区"志愿服务活动定期开展，同学们利用专业知识为社区居民提供健康咨询和基础护理服务，受到社区居民的一致好评。</p>
+                        <p>全员趣览——我们共同拼凑独家记忆</p>
+                        <p>生日推送——特别的节日，我们与你同庆祝</p>
+                        <p>学习小组——互帮互助，成就更好的我们</p>
                     </div>
                     <div class="feature-card fade-in" style="animation-delay: 0.4s;">
                         <h3>班级风采</h3>
-                        <p>在刚刚结束的学院运动会上，我班团结一心，奋勇拼搏，获得了团体总分第一名的好成绩，展现了23级1班积极向上的精神风貌。</p>
+                        <p>北京大学护理学院2023级1班所有同学同奋斗、共进退，是一个充满活力与凝聚力的集体。我们欢迎您继续浏览我们共同创建的班级网站和班级公众号。</p>
                     </div>
                 </div>
             </div>
@@ -683,8 +727,8 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h3>关于我们</h3>
-                        <p>北京大学护理学院23级1班是一个充满活力与凝聚力的集体，由30名怀揣护理梦想的优秀学子组成。我们秉持"团结、奋进、专业、奉献"的班训，在学术研究、社会实践、志愿服务等方面都取得了优异成绩。</p>
-                        <p>班级学风严谨，同学们互帮互助，形成了浓厚的学习氛围。在专业课程学习之余，我们还积极开展各类学术研讨和技能训练活动，不断提升专业素养。</p>
+                        <p>北京大学护理学院2023级1班是一个充满活力与凝聚力的集体，由25名怀揣护理梦想的优秀学子组成。我们相互鼓励、携手奋进、全面发展，在学术研究、社会实践、志愿服务等方面都有不凡表现。</p>
+                        <p>班级学风严谨，同学们互帮互助，形成了浓厚的学习氛围。在专业课程学习之余，我们还积极组织开展各类学术研讨和课外活动，不断提升综合素养。</p>
                         <p>班级注重全面发展，同学们积极参与学校各项活动，在文体比赛、志愿服务、社会实践等方面都表现突出，展现了北大护理人的风采。</p>
                     </div>
                     <div class="about-image">
@@ -695,21 +739,211 @@
                 <h3 class="section-title" style="margin-top: 60px;">班级成员</h3>
                 <div class="students">
                     <div class="student-card fade-in">
-                        <div class="student-image" style="background-image: url('image/祝迎莹.png');"></div>
+                        <div class="student-image" style="background-image: url('image/晁嘉宁.png');"></div>
                         <div class="student-info">
-                            <h3>祝迎莹</h3>
-                            <p>前任班长</p>
-                            <p>专业成绩优异，组织能力强，带领班级获得多项荣誉。</p>
+                            <h3>晁嘉宁</h3>
+                            <p>班长、生活委员</p>
+                            <p>个人简介</p>
                         </div>
                     </div>
-                    <div class="student-card fade-in" style="animation-delay: 0.2s;">
-                        <div class="student-image" style="background-image: url('image/张雪娇.jpg');"></div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/王紫艺.png');"></div>
+                        <div class="student-info">
+                            <h3>王紫艺</h3>
+                            <p>团支书</p>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/张雪娇.png');"></div>
                         <div class="student-info">
                             <h3>张雪娇</h3>
                             <p>学习委员</p>
-                            <p>学术研究突出，多次获得奖学金，热心帮助同学解决学习问题。</p>
+                            <p>个人简介</p>
                         </div>
                     </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/刘炫志.png');"></div>
+                        <div class="student-info">
+                            <h3>刘炫志</h3>
+                            <p>文体委员</p>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/魏凯琪.png');"></div>
+                        <div class="student-info">
+                            <h3>魏凯琪</h3>
+                            <p>宣传委员</p>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/张洪森.png');"></div>
+                        <div class="student-info">
+                            <h3>张洪森</h3>
+                            <p>组织委员</p>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/梁正浩.png');"></div>
+                        <div class="student-info">
+                            <h3>梁正浩</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/肖昌奇.png');"></div>
+                        <div class="student-info">
+                            <h3>肖昌奇</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/陈冰悦.png');"></div>
+                        <div class="student-info">
+                            <h3>陈冰悦</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/邓云.png');"></div>
+                        <div class="student-info">
+                            <h3>邓云</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/柳明飞.png');"></div>
+                        <div class="student-info">
+                            <h3>柳明飞</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/王珺玉.png');"></div>
+                        <div class="student-info">
+                            <h3>王珺玉</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/魏丽萍.png');"></div>
+                        <div class="student-info">
+                            <h3>魏丽萍</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/王禹沣.png');"></div>
+                        <div class="student-info">
+                            <h3>王禹沣</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/贾艳萍.png');"></div>
+                        <div class="student-info">
+                            <h3>贾艳萍</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/戚舒越.png');"></div>
+                        <div class="student-info">
+                            <h3>戚舒越</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/李忠鹏.png');"></div>
+                        <div class="student-info">
+                            <h3>李忠鹏</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/吴蔓玲.png');"></div>
+                        <div class="student-info">
+                            <h3>吴蔓玲</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/董超祺.png');"></div>
+                        <div class="student-info">
+                            <h3>董超祺</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/陈雪晴.png');"></div>
+                        <div class="student-info">
+                            <h3>陈雪晴</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/陈钥文.png');"></div>
+                        <div class="student-info">
+                            <h3>陈钥文</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/陈碧慧.png');"></div>
+                        <div class="student-info">
+                            <h3>陈碧慧</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/刘佳慧.png');"></div>
+                        <div class="student-info">
+                            <h3>刘佳慧</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/阿丽米热·买门.png');"></div>
+                        <div class="student-info">
+                            <h3>阿丽米热·买门</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card fade-in">
+                        <div class="student-image" style="background-image: url('image/马梦琴.png');"></div>
+                        <div class="student-info">
+                            <h3>马梦琴</h3>
+                            <p>个人简介</p>
+                        </div>
+                    </div>
+
                     <!-- 更多同学卡片可以在这里添加 -->
                 </div>
             </div>
@@ -725,28 +959,55 @@
                     <div class="activity-card fade-in">
                         <div class="activity-image" style="background-image: url('image/活动-参军欢送会.png');"></div>
                         <div class="activity-info">
-                            <div class="date">2023年10月15日</div>
+                            <div class="date">2025年3月11日</div>
                             <h3>扬帆起航，军旅新篇——祝迎莹光荣参军欢送会</h3>
                             <p>班级为即将参军的祝迎莹同学举行了温馨感人的欢送会，同学们纷纷送上祝福，表达了对她军旅生涯的美好祝愿。</p>
                             <a href="https://mp.weixin.qq.com/s/GoBPxfkEFQo308-T7f0QWA" class="btn" target="_blank">查看详情</a>
                         </div>
                     </div>
                     <div class="activity-card fade-in" style="animation-delay: 0.2s;">
-                        <div class="activity-image" style="background-image: url('image/活动-香山.jpg');"></div>
+                        <div class="activity-image" style="background-image: url('image/活动-参观工艺美术馆.jpeg');"></div>
                         <div class="activity-info">
-                            <div class="date">2023年9月20日</div>
-                            <h3>班级秋游活动——香山赏红叶</h3>
-                            <p>全班同学前往香山公园开展秋游活动，欣赏红叶美景，增进同学情谊，放松身心，为接下来的学习生活充电。</p>
-                            <a href="#" class="btn">查看详情</a>
+                            <div class="date">2024年11月15日</div>
+                            <h3>秋意浓，匠心情——北京大学护理学院23级探寻中国工艺美术馆之旅</h3>
+                            <p>班级在学院的统一组织下，前往参观中国工艺美术馆，共同探寻中国传统工艺美术的瑰宝。</p>
+                            <a href="https://mp.weixin.qq.com/s/Kvzo7MM4fdrQouXnEuHOSQ" class="btn" target="_blank">查看详情</a>
                         </div>
                     </div>
                     <div class="activity-card fade-in" style="animation-delay: 0.4s;">
-                        <div class="activity-image" style="background-image: url('image/活动-新生见面.png');"></div>
+                        <div class="activity-image" style="background-image: url('image/活动-参观北大医院.jpeg');"></div>
                         <div class="activity-info">
-                            <div class="date">2023年8月30日</div>
-                            <h3>新生见面会暨班级破冰活动</h3>
-                            <p>新学期伊始，班级组织了新生见面会和破冰活动，通过各种有趣的游戏和互动环节，帮助新同学快速融入集体。</p>
-                            <a href="#" class="btn">查看详情</a>
+                            <div class="date">2024年1月15日</div>
+                            <h3>赴北京大学第一医院（大兴院区）参观学习</h3>
+                            <p>为了了解医院的工作环境和护士的日常工作，我班同学们赴北京大学第一医院（大兴院区）进行参观学习。</p>
+                            <a href="https://mp.weixin.qq.com/s/VhZaXQDzvzvwwUPgXE5SRQ" class="btn" target="_blank">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="activity-card fade-in" style="animation-delay: 0.4s;">
+                        <div class="activity-image" style="background-image: url('image/活动-24元旦.jpeg');"></div>
+                        <div class="activity-info">
+                            <div class="date">2023年12月30日</div>
+                            <h3>元旦活动——元旦快乐，喜迎龙年</h3>
+                            <p>专业班主任李变老师、辅导员赵哥与同学们欢聚一堂，一起为10月到次年1月生日的小伙伴们庆生，同时共同迎接2024的到来。</p>
+                            <a href="https://mp.weixin.qq.com/s/lUgYx-ghcFP3gR_TF2tCCw" class="btn" target="_blank">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="activity-card fade-in" style="animation-delay: 0.4s;">
+                        <div class="activity-image" style="background-image: url('image/活动-香山.jpg');"></div>
+                        <div class="activity-info">
+                            <div class="date">2023年11月18日</div>
+                            <h3>“登香山，修精神”——班级团建之香山秋游</h3>
+                            <p>在秋高气爽的11月，护理1班组织了一次别开生面的香山秋游活动，快来看看吧~</p>
+                            <a href="https://mp.weixin.qq.com/s/jv62qJbnDFw-SZlUBtrS6A" class="btn" target="_blank">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="activity-card fade-in" style="animation-delay: 0.4s;">
+                        <div class="activity-image" style="background-image: url('image/活动-国庆骑行.jpeg');"></div>
+                        <div class="activity-info">
+                            <div class="date">2023年9月27日</div>
+                            <h3>骑乐北京，喜迎国庆——2023级护理1班国庆特色活动</h3>
+                            <p>生在红旗下，长在春风里。国庆中秋双节来临之际，2023级护理1班举办了“骑乐北京，喜迎国庆”主题活动，用实际行动献礼盛世中华。</p>
+                            <a href="https://mp.weixin.qq.com/s/Ra1wgLXRKLQVtKZnfAga8A" class="btn" target="_blank">查看详情</a>
                         </div>
                     </div>
                 </div>
@@ -835,22 +1096,22 @@
                         <div class="culture-image" style="background-image: url('image/班服.png');"></div>
                         <div class="culture-info">
                             <h3>班服</h3>
-                            <p>以北大红为主色调，设计简洁大方，展现了班级的凝聚力和专业特色。</p>
+                            <p>全班共创设计，印有班徽和班级独创图案，把集体记忆穿在身上。</p>
                         </div>
                     </div>
                     <div class="culture-item fade-in" style="animation-delay: 0.8s;">
                         <div class="culture-image" style="background-image: url('image/班旗.jpg');"></div>
                         <div class="culture-info">
                             <h3>班旗</h3>
-                            <p>班旗设计融合了北大校徽和护理元素，象征着我们在北大精神的指引下，践行护理使命。</p>
+                            <p>班旗设计融合了护理元素和1班特色，象征着我们班团结奋斗，践行护理使命。</p>
                         </div>
                     </div>
                     <div class="culture-item fade-in" style="animation-delay: 1s;">
                         <div class="culture-image" style="background-image: url('image/公众号.png');"></div>
                         <div class="culture-info">
                             <h3>班级公众号</h3>
-                            <p>定期发布班级动态、学术资讯和护理知识，是展示班级风采的重要窗口。</p>
-                            <a href="#" class="btn" style="margin-top: 10px;">关注我们</a>
+                            <p>定期发布班级活动、班级动态、生日推送等，是展示班级风采的重要窗口。</p>
+                            <a href="#" class="btn" style="margin-top: 10px;" id="followBtn">关注我们</a>
                         </div>
                     </div>
                 </div>
@@ -864,7 +1125,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>关于我们</h3>
-                    <p>北京大学护理学院23级1班是一个团结奋进、追求卓越的集体，我们秉持"团结、奋进、专业、奉献"的班训，在学术研究、社会实践、志愿服务等方面都取得了优异成绩。</p>
+                    <p>北京大学护理学院2023级1班是一个团结奋进、追求卓越的集体，我们相互鼓励、携手奋进、全面发展，在学术研究、社会实践、志愿服务等方面都有不凡表现。</p>
                 </div>
                 <div class="footer-column">
                     <h3>快速链接</h3>
@@ -883,20 +1144,29 @@
                         <li><a href="https://www.bjmu.edu.cn/" target="_blank">北京大学医学部</a></li>
                         <li><a href="https://course.pku.edu.cn/" target="_blank">北大教学网</a></li>
                         <li><a href="https://nursing.bjmu.edu.cn/" target="_blank">护理学院</a></li>
-                        <li><a href="#" target="_blank">班级公众号</a></li>
+                        <li><a href="#" id="followBtn1">关注我们</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>联系我们</h3>
                     <p>地址：北京市海淀区学院路38号北京大学护理学院</p>
-                    <p>邮箱：nursing23_1@pku.edu.cn</p>
+                    <p>公众号：北京大学护理学院2023级1班</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 北京大学护理学院23级1班 版权所有</p>
+                <p>&copy; 2025 北京大学护理学院2023级1班 版权所有</p>
             </div>
         </div>
     </footer>
+
+    <!-- 模态框结构 -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="image/公众号QR.png" alt="班级公众号二维码" class="qr-image">
+            <p>扫描二维码，关注我们班的微信公众号</p>
+        </div>
+    </div>
 
     <script>
         // 导航栏滚动效果
@@ -1024,6 +1294,34 @@
                 }
             });
         });
+
+        // 获取模态框元素
+        const modal = document.getElementById("qrModal");
+        const btn = document.getElementById("followBtn");
+        const btn1 = document.getElementById("followBtn1");
+        const span = document.getElementsByClassName("close")[0];
+
+        // 点击按钮打开模态框
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // 点击按钮打开模态框
+        btn1.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // 点击关闭按钮关闭模态框
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // 点击模态框外部也关闭
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
