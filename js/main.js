@@ -72,27 +72,41 @@ document.addEventListener('DOMContentLoaded', function() {
     
     charts.forEach((chart, index) => {
         if (index === 0) {
-            // 学习成绩分布图表
+            // 综测成绩分布图表
             chart.innerHTML = `
-                <svg width="100%" height="100%" viewBox="0 0 400 300">
-                    <rect x="50" y="50" width="300" height="200" fill="#f9f9f9" stroke="#ddd" stroke-width="1"/>
-                    <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#666">学习成绩分布</text>
-                    <line x1="50" y1="250" x2="350" y2="250" stroke="#999" stroke-width="1"/>
-                    <line x1="50" y1="250" x2="50" y2="50" stroke="#999" stroke-width="1"/>
-                    <text x="30" y="240" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">0</text>
-                    <text x="30" y="190" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">20</text>
-                    <text x="30" y="140" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">40</text>
-                    <text x="30" y="90" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">60</text>
-                    <text x="30" y="40" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">80</text>
-                    <rect x="80" y="150" width="40" height="100" fill="#94070A"/>
-                    <rect x="140" y="100" width="40" height="150" fill="#94070A"/>
-                    <rect x="200" y="70" width="40" height="180" fill="#94070A"/>
-                    <rect x="260" y="120" width="40" height="130" fill="#94070A"/>
-                    <text x="100" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">80-89</text>
-                    <text x="160" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">90-94</text>
-                    <text x="220" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">95-99</text>
-                    <text x="280" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">100</text>
-                </svg>
+<svg width="100%" height="100%" viewBox="0 0 400 300">
+    <!-- 背景面板 -->
+    <rect x="50" y="50" width="300" height="200" fill="#f9f9f9" stroke="#ddd" stroke-width="1"/>
+    <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#666">学习成绩分布</text>
+    
+    <!-- 坐标轴 -->
+    <line x1="50" y1="250" x2="350" y2="250" stroke="#999" stroke-width="1"/>
+    <line x1="50" y1="250" x2="50" y2="50" stroke="#999" stroke-width="1"/>
+    
+    <!-- 纵轴标签（人数） -->
+    <text x="30" y="250" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">0</text>
+    <text x="30" y="200" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">5</text>
+    <text x="30" y="150" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">10</text>
+    <text x="30" y="100" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">15</text>
+    <text x="30" y="50" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">20</text>
+    
+    <!-- 柱状图主体 -->
+    <!-- 60-69分（2人） -->
+    <rect x="80" y="230" width="40" height="20" fill="#94070A"/>
+    <text x="100" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">60-69</text>
+    
+    <!-- 70-79分（8人） -->
+    <rect x="140" y="170" width="40" height="80" fill="#94070A"/>
+    <text x="160" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">70-79</text>
+    
+    <!-- 80-84分（16人） -->
+    <rect x="200" y="90" width="40" height="160" fill="#94070A"/>
+    <text x="220" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">80-84</text>
+    
+    <!-- 85-89分（5人） -->
+    <rect x="260" y="200" width="40" height="50" fill="#94070A"/>
+    <text x="280" y="270" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">85-89</text>
+</svg>
             `;
         } else if (index === 1) {
             // 活动参与情况图表
