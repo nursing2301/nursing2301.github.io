@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <svg width="100%" height="100%" viewBox="0 0 400 300">
     <!-- 背景面板 -->
     <rect x="50" y="50" width="300" height="200" fill="#f9f9f9" stroke="#ddd" stroke-width="1"/>
-    <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#666">学习成绩分布</text>
+    <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#666">综测成绩分布</text>
     
     <!-- 坐标轴 -->
     <line x1="50" y1="250" x2="350" y2="250" stroke="#999" stroke-width="1"/>
