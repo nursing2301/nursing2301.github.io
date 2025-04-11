@@ -111,36 +111,36 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (index === 1) {
             // 活动参与情况图表
             chart.innerHTML = `
-<svg width="100%" height="100%" viewBox="0 0 400 300">
-    <!-- 基础框架 -->
-    <rect x="50" y="50" width="300" height="200" fill="#f9f9f9" stroke="#ddd" stroke-width="1"/>
-    <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#666">活动参与情况</text>
-    <line x1="50" y1="250" x2="350" y2="250" stroke="#999" stroke-width="1"/>
-    <line x1="50" y1="250" x2="50" y2="50" stroke="#999" stroke-width="1"/>
-    <text x="30" y="240" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">0%</text>
-    <text x="30" y="190" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">25%</text>
-    <text x="30" y="140" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">50%</text>
-    <text x="30" y="90" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">75%</text>
-    <text x="30" y="40" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">100%</text>
+                <svg width="100%" height="100%" viewBox="0 0 400 300">
+                    <!-- 基础框架 -->
+                    <rect x="50" y="50" width="300" height="200" fill="#f9f9f9" stroke="#ddd" stroke-width="1"/>
+                    <text x="200" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#666">活动参与情况</text>
+                    <line x1="50" y1="250" x2="350" y2="250" stroke="#999" stroke-width="1"/>
+                    <line x1="50" y1="250" x2="50" y2="50" stroke="#999" stroke-width="1"/>
+                    <text x="30" y="240" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">0%</text>
+                    <text x="30" y="190" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">25%</text>
+                    <text x="30" y="140" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">50%</text>
+                    <text x="30" y="90" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">75%</text>
+                    <text x="30" y="40" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">100%</text>
 
-    <!-- 学术活动 (85%) -->
-    <circle cx="100" cy="180" r="30" fill="none" stroke="#94070A" stroke-width="10" 
-            stroke-dasharray="160.14, 28.26" transform="rotate(-90 100 180)"/>
-    <text x="100" y="180" text-anchor="middle" font-family="Arial" font-size="14" fill="#94070A">85%</text>
-    <text x="100" y="210" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">学术活动</text>
+                    <!-- 学术活动 (85%) -->
+                    <circle cx="100" cy="180" r="30" fill="none" stroke="#94070A" stroke-width="10" 
+                            stroke-dasharray="160.14, 28.26" transform="rotate(-90 100 180)"/>
+                    <text x="100" y="180" text-anchor="middle" font-family="Arial" font-size="14" fill="#94070A">85%</text>
+                    <text x="100" y="230" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">学术活动</text> <!-- 下移20px -->
 
-    <!-- 文体活动 (82%) -->
-    <circle cx="200" cy="180" r="30" fill="none" stroke="#94070A" stroke-width="10" 
-            stroke-dasharray="154.5, 33.9" transform="rotate(-90 200 180)"/>
-    <text x="200" y="180" text-anchor="middle" font-family="Arial" font-size="14" fill="#94070A">82%</text>
-    <text x="200" y="210" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">文体活动</text>
+                    <!-- 文体活动 (82%) -->
+                    <circle cx="200" cy="180" r="30" fill="none" stroke="#94070A" stroke-width="10" 
+                            stroke-dasharray="154.5, 33.9" transform="rotate(-90 200 180)"/>
+                    <text x="200" y="180" text-anchor="middle" font-family="Arial" font-size="14" fill="#94070A">82%</text>
+                    <text x="200" y="230" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">文体活动</text> <!-- 下移20px -->
 
-    <!-- 志愿服务 (90%) -->
-    <circle cx="300" cy="180" r="30" fill="none" stroke="#94070A" stroke-width="10" 
-            stroke-dasharray="169.56, 18.84" transform="rotate(-90 300 180)"/>
-    <text x="300" y="180" text-anchor="middle" font-family="Arial" font-size="14" fill="#94070A">90%</text>
-    <text x="300" y="210" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">志愿服务</text>
-</svg>
+                    <!-- 志愿服务 (90%) -->
+                    <circle cx="300" cy="180" r="30" fill="none" stroke="#94070A" stroke-width="10" 
+                            stroke-dasharray="169.56, 18.84" transform="rotate(-90 300 180)"/>
+                    <text x="300" y="180" text-anchor="middle" font-family="Arial" font-size="14" fill="#94070A">90%</text>
+                    <text x="300" y="230" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">志愿服务</text> <!-- 下移20px -->
+                </svg>
             `;
         }
     });
